@@ -11,7 +11,6 @@ function Home() {
         const response = await fetch(`${apiBaseUrl}/get-register?email=${user.email}`);
         const jsonResponse = await response.json();
         return jsonResponse;
-        
     }
 
     const grantAcces = async () => {
@@ -23,7 +22,6 @@ function Home() {
             setValidUser(false);
             return;
         }
-    
         if (userData){
             if(userData.Rol == "Administrador"){
                 setValidUser(true);
@@ -52,7 +50,6 @@ function Home() {
                 <h2 className="home-style">BIENVENIDO AL SISTEMA DE ADMINISTRACIÓN  Y VENTAS</h2>
         </div>
     );
-  
 }
 
 export default Home;

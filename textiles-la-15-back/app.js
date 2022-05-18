@@ -40,7 +40,6 @@ app.get("/search-products", async (request,response)=> {
     const busqueda = request.query.busqueda;
     const valorBusqueda = request.query.valorBusqueda;
     const [rows, fields] = await connection.execute(`SELECT * FROM Productos WHERE ${busqueda}='${valorBusqueda}'`);
-
     response.json({data: rows});
 })
 
@@ -51,8 +50,7 @@ app.post("/post-register", async (request,response) => {
         response.json({status: "ok"});
     }catch (error){
         response.json(error);
-    }
-    
+    }  
 })
 
 /*Endpoint para agregar productos a la BBDD*/
@@ -67,7 +65,6 @@ app.post("/add-product", async (req, res) => {
         console.log(error);
         res.json(error)
     }
-    
 })
 
 /*Endpoint para actualizar el estado y el rol del usuario*/
@@ -112,7 +109,6 @@ app.post("/add-product", async (req, res) => {
         console.log(error);
         res.json(error)
     }
-    
 })
 
 //Ventas
